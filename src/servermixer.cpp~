@@ -1,0 +1,18 @@
+#include "servermixer.h"
+
+CCriticalSection cs_mapMixServerTxs;
+std::map<int64, CMixServerTx> mapMixServerTxs;
+
+void CMixServerTx::print() {
+  std::cout << "CMixServerTx(amount = " << amount << ", iaddress = " << iaddress
+	    << ", fromnode = " << fromnode << std::endl;
+}
+
+bool FindMixServerTx(int64 id, CMixServerTx& mstx) {
+  LOCK(cs_mapMixServerTxs);
+  std::map<int64, CMixServerTx>::iterator it = mapMixServerTxs.find(id);
+  if (it == mapMixServerTxs.end()) return false;
+  mstx = (*it).second;
+  return true;
+}
+

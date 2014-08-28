@@ -1,0 +1,9 @@
+Building BitMoCoin
+
+See doc/readme-qt.rst for instructions on building BitMoCoin QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of BitMoCoin.
+
+See doc/build-*.txt for instructions on building BitMoCoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of BitMoCoin.
